@@ -7,7 +7,7 @@ class ClaudeLLM(LLM):
         super().__init__("Claude", api_key, model, max_tokens, temperature)
     
     def setup_client(self):
-        self.client = anthropic.Anthropic(api_key=self.api_key)
+        self.client = anthropic.Client(api_key=self.api_key)
         return self.client
     
     def generate(self, prompt, system_prompt=None):
